@@ -1,0 +1,7 @@
+{
+  "name": "fakeTwitter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
