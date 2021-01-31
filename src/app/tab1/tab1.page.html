@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" #header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button>
@@ -15,15 +15,15 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-segment [(ngModel)]="segment" mode="md" #segmentcontrol>
-    <ion-segment-button value="home">
-      <ion-label>Home</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="content">
-      <ion-label>cr-content-suggest</ion-label>
-    </ion-segment-button>
-  </ion-segment>
+<ion-segment [(ngModel)]="segment" mode="md" #segmentcontrol>
+  <ion-segment-button value="home">
+    <ion-label>Home</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="content">
+    <ion-label>cr-content-suggest</ion-label>
+  </ion-segment-button>
+</ion-segment>
+<ion-content [fullscreen]="true" [scrollEvents]="true" [appHideHeader]="header" [appStickySegment]="segmentcontrol">
 
   <ion-slides [options]="opts">
     <ion-slide *ngFor="let tweet of tweets">
